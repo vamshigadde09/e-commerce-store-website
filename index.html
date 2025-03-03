@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ecommerceApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon-Style E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="StoreController">
+
+    <header class="header">
+        <h1>My E-Commerce Store</h1>
+    </header>
+
+    <div class="container">
+        <div class="products-section">
+            <h2>Products</h2>
+            <div class="products">
+                <div class="product" ng-repeat="product in products">
+                    <img ng-src="{{ product.image }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">Price: ₹{{ product.price }}</p>
+                    <button class="add-to-cart" ng-click="addToCart(product)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div class="cart-item" ng-repeat="item in cart">
+                <p>{{ item.product.name }} - ₹{{ item.product.price }} (x{{ item.quantity }})</p>
+                <button class="remove" ng-click="removeFromCart(item)">Remove</button>
+            </div>
+            <p ng-if="cart.length === 0" class="empty-cart">Your cart is empty.</p>
+            <p class="total">Total: ₹{{ getTotalPrice() }}</p>
+            <button class="clear-cart" ng-click="clearCart()" ng-if="cart.length > 0">Clear Cart</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

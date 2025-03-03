@@ -1,0 +1,124 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #232f3e;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.products-section, .cart-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-section {
+    width: 70%;
+}
+
+.cart-section {
+    width: 25%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 200px; /* Fixed height for all images */
+    object-fit: contain; /* Ensures the images maintain aspect ratio */
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.price {
+    font-size: 1.1rem;
+    color: #B12704;
+    margin-bottom: 15px;
+}
+
+button.add-to-cart, button.remove, button.clear-cart {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    align-self: center; /* Ensures button stays centered */
+}
+
+button.add-to-cart:hover, button.remove:hover, button.clear-cart:hover {
+    background-color: #e68a00;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.empty-cart {
+    color: #999;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
